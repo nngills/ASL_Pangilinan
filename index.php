@@ -53,6 +53,7 @@
     </nav>
     
     <main>
+    <div>
     	<article id="top">
 			<section id="title">
 				<h2>$ItemName</h2>
@@ -99,6 +100,7 @@
 			}
 		?>
         </section>
+        </div>
     </main>
     
     <!--JAVASCRIPT-->
