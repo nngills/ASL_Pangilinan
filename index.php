@@ -7,7 +7,9 @@
 </head>
 
 <body>
-	<h1>Don't Starve Items</h1>
+	<header>
+		<h1>Don't Starve Items</h1>
+    </header>
     
     <?php
 		//SETUP username, password, and establish PDO and DSN connection to database
