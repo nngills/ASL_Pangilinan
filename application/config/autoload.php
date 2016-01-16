@@ -127,3 +127,7 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array();
+
+/* asset_url */
+$autoload['helper'] = array('url','utility');
+

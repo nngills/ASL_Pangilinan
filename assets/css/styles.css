@@ -68,7 +68,7 @@ nav img{
     transform: translate(-50%, -50%)
 }
 
-/*-*-*-*-*-*-	MAIN ITEM LIST	-*-*-*-*-*-*/
+/*-*-*-*-*-*-	MAIN	-*-*-*-*-*-*/
 
 main{
 	width: 600px;
@@ -78,6 +78,7 @@ main{
 	color: #fff;
 	font-family: Stint;
 	font-size: 1.2em;
+	margin-bottom: 70px;
 }
 
 main > div{ 
@@ -107,14 +108,18 @@ main img{
 	width: 48px;
 }
 
-/**---TOP PORTION---**/
+/**---RECIPE---**/
 h3{
 	font-weight: 100;
 	font-size: 1.5em;
 	margin: 0px;
 }
 
-/**ITEM LIST TAG TITLES**/
+/**ITEM LIST**/
+#itemlist ul img{
+	cursor: pointer;
+}
+
 #Light h2, #Survival h2{
 	padding-left: 40px!important;
 }

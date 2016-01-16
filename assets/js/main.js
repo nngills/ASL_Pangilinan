@@ -7,7 +7,7 @@ elem = $("#itemlist article h2");
 for(a = 0, b = elem.length; a < b; a++){	
 	elemValue = $(elem[a]).text().replace(/\ /g, "_");
 	$(elem[a]).css({
-		"background-image": "url(images/tabs/"+elemValue+".png)",
+		"background-image": "url(assets/images/tabs/"+elemValue+".png)",
 		"background-repeat": "no-repeat",
 		"background-size": "contain",
 		"padding": "10px 10px 10px 55px"
