@@ -15,7 +15,7 @@ for(a = 0, b = elem.length; a < b; a++){
 }
 
 //smooth scrolling
-$('a[href^="#"]').on('click',function (e) {
+$('a[href^="#"]').on('click', function(e) {
 	e.preventDefault();
 	var target = this.hash;
 	var $target = $(target);
@@ -24,6 +24,12 @@ $('a[href^="#"]').on('click',function (e) {
 	}, 500, 'swing', function () {
 		window.location.hash = target;
 	});
+});
+
+//get itemname from clicked item
+$("#itemlist li img").click(function(){
+	//recipe = $(this).attr("id");
+	//console.log(recipe)
 });
 
 }); //JQUERY WRAPPER END
