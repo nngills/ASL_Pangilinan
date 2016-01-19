@@ -1,9 +1,9 @@
 <section id="itemlist">
 <?php
-	//Gets tab names
+	//Gets tab names from databse
 	$query = $this->db->query('select tabName from tabs order by id');
 	
-	//gets craftable item list
+	//gets craftable item list from database
     $items_query = $this->db->query('
         select items.itemsName, tabs.tabName from craftable_items
         join items on items.id = craftable_items.itemId

@@ -123,6 +123,11 @@ h3{
 	margin: 0px;
 }
 
+/**Materials**/
+#materials span{
+	font-size: 1.8em;
+}
+
 /**ITEM LIST**/
 #itemlist ul img{
 	cursor: pointer;

@@ -8,8 +8,8 @@ class Pages extends CI_Controller {
 					show_404();
 			}
 		
+			//SETS UP "DontStarveItems" DATABASE CONNECTION
 			$this->load->database();
-			$data['title'] = ucfirst($page); // Capitalize the first letter
 			
 			$this->load->view('templates/header');
 			$this->load->view('pages/nav');

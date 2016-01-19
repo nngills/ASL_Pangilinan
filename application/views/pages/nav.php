@@ -3,6 +3,7 @@
     <?php
         /*<li><a href="#$tabName"><img src="images/tabs/$tabName"></a></li>*/
         
+		//gets tabs from database
         $query = $this->db->query('select tabName from tabs order by id');
         
         //POPULATE NAV WITH TAB IMAGES AND A HREF TO QUICK SCROLL 
