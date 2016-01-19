@@ -109,6 +109,10 @@ main img{
 }
 
 /**---RECIPE---**/
+#recipe{
+	position: relative;
+}
+
 #recipe h2{
 	margin: 0px;
 }
@@ -123,12 +127,27 @@ h3{
 	margin: 0px;
 }
 
+/**Title**/
+#title{
+	float: left;
+}
+
 /**Materials**/
+#materials{
+	position: absolute;
+	top: 15px;
+	left: 150px;
+}
+
 #materials span{
 	font-size: 1.8em;
 }
 
 /**ITEM LIST**/
+#itemlist{
+	clear: both;
+}
+
 #itemlist ul img{
 	cursor: pointer;
 }

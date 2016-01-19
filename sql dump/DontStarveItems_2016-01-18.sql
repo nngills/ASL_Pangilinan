@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.42)
 # Database: DontStarveItems
-# Generation Time: 2016-01-13 00:22:50 +0000
+# Generation Time: 2016-01-19 01:18:59 +0000
 # ************************************************************
 
 
@@ -32,8 +32,8 @@ CREATE TABLE `craftable_items` (
   PRIMARY KEY (`id`),
   KEY `tabIndex` (`tab`),
   KEY `itemId` (`itemId`),
-  CONSTRAINT `craftable_items_ibfk_3` FOREIGN KEY (`itemId`) REFERENCES `items` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `craftable_items_ibfk_2` FOREIGN KEY (`tab`) REFERENCES `tabs` (`id`)
+  CONSTRAINT `craftable_items_ibfk_2` FOREIGN KEY (`tab`) REFERENCES `tabs` (`id`),
+  CONSTRAINT `craftable_items_ibfk_3` FOREIGN KEY (`itemId`) REFERENCES `items` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `craftable_items` WRITE;
@@ -660,8 +660,8 @@ CREATE TABLE `materials` (
   PRIMARY KEY (`id`),
   KEY `craftableId` (`craftableId`),
   KEY `material` (`material`),
-  CONSTRAINT `materials_ibfk_2` FOREIGN KEY (`material`) REFERENCES `items` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `materials_ibfk_1` FOREIGN KEY (`craftableId`) REFERENCES `items` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `materials_ibfk_1` FOREIGN KEY (`craftableId`) REFERENCES `items` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `materials_ibfk_2` FOREIGN KEY (`material`) REFERENCES `items` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `materials` WRITE;
@@ -1014,7 +1014,18 @@ VALUES
 	(9194,141,4,88),
 	(9195,143,1,414),
 	(9196,143,1,204),
-	(9197,143,5,130);
+	(9197,143,5,130),
+	(9198,125,2,86),
+	(9229,125,2,351),
+	(9230,126,2,86),
+	(9231,126,1,246),
+	(9232,126,1,226),
+	(9233,127,2,86),
+	(9238,127,2,88),
+	(9239,128,2,86),
+	(9240,128,1,300),
+	(9241,129,2,86),
+	(9242,129,1,240);
 
 /*!40000 ALTER TABLE `materials` ENABLE KEYS */;
 UNLOCK TABLES;
