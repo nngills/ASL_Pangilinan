@@ -32,4 +32,20 @@ $("#itemlist li img").click(function(){
 	//console.log(recipe)
 });
 
+//apply outline fn
+applyOutline = function(elem, value){
+	$(elem).before("<span>"+value+"</span>");
+	$(elem).prev().css({
+		"position": "absolute",
+		"-webkit-text-stroke": "4px black"
+	});	
+}
+
+elem = $(".outline");
+for(i=0, j=elem.length; i<j; i++){
+	value = $(elem[i]).text();
+	console.log(elem[i]+" "+value)
+	applyOutline(elem[i], value);
+}
+
 }); //JQUERY WRAPPER END

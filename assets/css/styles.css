@@ -139,8 +139,16 @@ h3{
 	left: 150px;
 }
 
+.mats{
+	float: left;
+	position: relative;
+}
+
 #materials span{
-	font-size: 1.8em;
+	font-size: 1.4em;
+	position: absolute;
+	width: 52px;
+	text-align: center;
 }
 
 /**ITEM LIST**/
