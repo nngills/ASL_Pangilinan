@@ -1,7 +1,3 @@
-<section id="itemlist">
-<form>
-	<input type="text" placeholder="Search" name="search">
-</form>
 <?php
 	//Gets tab names from databse
 	$query = $this->db->query('select tabName from tabs order by id');

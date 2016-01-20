@@ -169,6 +169,10 @@ input:focus {
 	outline: none; 
 }
 
+::-webkit-input-placeholder{
+	color: #fff;
+}
+
 /**ITEM LIST**/
 #itemlist{
 	clear: both;

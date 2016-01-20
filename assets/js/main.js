@@ -26,12 +26,6 @@ $('a[href^="#"]').on('click', function(e) {
 	});
 });
 
-//get itemname from clicked item
-$("#itemlist li img").click(function(){
-	//recipe = $(this).attr("id");
-	//console.log(recipe)
-});
-
 //apply outline fn
 applyOutline = function(elem, value){
 	$(elem).before("<span>"+value+"</span>");
@@ -45,18 +39,26 @@ applyOutline = function(elem, value){
 elem = $(".outline");
 for(i=0, j=elem.length; i<j; i++){
 	value = $(elem[i]).text();
-	console.log(elem[i]+" "+value)
 	applyOutline(elem[i], value);
 }
 
-//ajax testing
-	jQuery.ajax({
-		type: "POST",
-		url: "<?php echo base_url(); ?>" + "index.php/ajax_post_controller/user_data_submit",
-		dataType: 'json',
-		data: {name: user_name, pwd: password},
-		success: function(res){
+//DISABLE FORM ENTER
+$("form").bind("keypress", function(e) {
+	if (e.keyCode == 13) {
+		return false;
+	}
+});
+
+$("input").keyup(function(){
+	console.log(this.value)
+	$.ajax({
+		url: 'search.php',
+		data: {'x': this.value},
+		type: "GET",
+		success: function(data){
+			$("#search_results").html(data)
 		}
 	})
+})
 
 }); //JQUERY WRAPPER END

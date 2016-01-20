@@ -20,7 +20,8 @@ class Pages extends CI_Controller {
 			}else{
 				$this->load->view('pages/'.$page);
 			}
-			
+			$this->load->view('pages/searchbar.php');
+			//$this->load->view('pages/search.php');
 			$this->load->view('pages/itemlist');
 			$this->load->view('templates/footer');
 			
