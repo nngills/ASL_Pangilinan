@@ -41,11 +41,22 @@ applyOutline = function(elem, value){
 	});	
 }
 
+//adds outline to the material numbers
 elem = $(".outline");
 for(i=0, j=elem.length; i<j; i++){
 	value = $(elem[i]).text();
 	console.log(elem[i]+" "+value)
 	applyOutline(elem[i], value);
 }
+
+//ajax testing
+	jQuery.ajax({
+		type: "POST",
+		url: "<?php echo base_url(); ?>" + "index.php/ajax_post_controller/user_data_submit",
+		dataType: 'json',
+		data: {name: user_name, pwd: password},
+		success: function(res){
+		}
+	})
 
 }); //JQUERY WRAPPER END

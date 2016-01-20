@@ -4,8 +4,8 @@ class Pages extends CI_Controller {
 	public function view($page = 'default'){
 			if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
 			{
-					// Whoops, we don't have a page for that!
-					show_404();
+				// Whoops, we don't have a page for that!
+				show_404();
 			}
 		
 			//SETS UP "DontStarveItems" DATABASE CONNECTION
