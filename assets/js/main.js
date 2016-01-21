@@ -53,7 +53,7 @@ $("input").keyup(function(){
 	console.log(this.value)
 	$.ajax({
 		url: 'search.php',
-		data: {'x': this.value},
+		data: {'search_query': this.value},
 		type: "GET",
 		success: function(data){
 			$("#search_results").html(data)

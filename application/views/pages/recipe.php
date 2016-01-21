@@ -22,7 +22,7 @@
 			foreach($query->result() as $row){
 				
 				echo "<div class='mats'><span class='outline'>".$row->quantity."</span>";
-				echo '<img src="assets/images/items/'.$row->material.'.png"></div>';
+				echo '<img src="assets/images/items/'.$row->material.'.png" title="'.$row->material.'"></div>';
 			}
             ?>
         </section>

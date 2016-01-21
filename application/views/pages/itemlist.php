@@ -31,7 +31,7 @@
             //matches the itemName to the appropriate tabName and outputs the image into HTML
             if($items_row->tabName == $row->tabName){
                 $itemName = $items_row->itemsName;
-                echo '<li><a href="index.php?id='.$itemName.'"><img src="assets/images/items/'.$itemName.'.png"></a></li>';
+                echo '<li><a href="index.php?id='.$itemName.'"><img src="assets/images/items/'.$itemName.'.png" title="'.$itemName.'"></a></li>';
             }
         }
                 
