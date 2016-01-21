@@ -10,6 +10,7 @@
 		$pass="root";
 		$dbh = new PDO('mysql:host=localhost;dbname=DontStarveItems;port=8889', $user, $pass);
 		
+		//gets items from the database to match the search query
 		$stmt = $dbh->prepare('
 			select itemsName from craftable_items
 			join items
@@ -19,8 +20,13 @@
 		$stmt->execute();
 		$query = $stmt->fetchall(PDO::FETCH_ASSOC);
 		
-		foreach($query as $row){
-			echo '<li><a href="index.php?id='.$row['itemsName'].'"><img src="assets/images/items/'.$row['itemsName'].'.png" title="'.$row['itemsName'].'"></a></li>';
+		//Checks if search field is empty
+		if(!empty($search_query)){
+			//outputs matched items
+			foreach($query as $row){
+				echo '<li title="'.ucwords(str_replace("_", " ", $row['itemsName'])).'"><a href="index.php?id='.$row['itemsName'].'"><img src="assets/images/items/'.$row['itemsName'].'.png"></a></li>';	
+		}
+		
 			//
 		}
 	}

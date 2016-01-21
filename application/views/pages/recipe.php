@@ -20,9 +20,9 @@
             //<span>Number of material</span>
             //<img src="images/items/$material">
 			foreach($query->result() as $row){
-				
-				echo "<div class='mats'><span class='outline'>".$row->quantity."</span>";
-				echo '<img src="assets/images/items/'.$row->material.'.png" title="'.$row->material.'"></div>';
+				//title="'.ucwords(str_replace("_", " ", $row->material)).'"
+				echo '<div class="mats" title="'.ucwords(str_replace("_", " ", $row->material)).'"><span class="outline"> '.$row->quantity.'</span>';
+				echo '<img src="assets/images/items/'.$row->material.'.png" ></div>';
 			}
             ?>
         </section>

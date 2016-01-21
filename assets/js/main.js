@@ -50,15 +50,23 @@ $("form").bind("keypress", function(e) {
 });
 
 $("input").keyup(function(){
-	console.log(this.value)
+	var input_value = this.value;
+	
 	$.ajax({
 		url: 'search.php',
 		data: {'search_query': this.value},
 		type: "GET",
 		success: function(data){
-			$("#search_results").html(data)
+			if(input_value.length > 0){
+				$("#search_results").html(data)
+				$("#itemlist").hide();
+			}else{
+				$("#search_results").html(data)
+				$("#itemlist").show();
+			}
 		}
 	})
+	
 })
 
 }); //JQUERY WRAPPER END

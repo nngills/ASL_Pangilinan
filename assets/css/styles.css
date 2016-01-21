@@ -84,6 +84,7 @@ main{
 main > div{ 
 	padding: 5px;
 	background-color: #2e2318;
+	min-height: 550px;
 }
 
 h2{
@@ -142,6 +143,7 @@ h3{
 .mats{
 	float: left;
 	position: relative;
+	cursor: pointer;
 }
 
 #materials span{
