@@ -14,6 +14,7 @@ class Pages extends CI_Controller {
 			$this->load->view('templates/header');
 			$this->load->view('pages/nav');
 			
+			//if there is no GET set to default page
 			if(isset($_GET['id'])){
 				$data['item_name'] = $this->input->get('id');
 				$this->load->view('pages/recipe.php', $data);
@@ -23,7 +24,6 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/searchbar.php');
 			$this->load->view('pages/itemlist');
 			$this->load->view('templates/footer');
-			
 	}
 }
 ?>

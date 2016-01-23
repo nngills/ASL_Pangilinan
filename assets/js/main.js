@@ -49,6 +49,10 @@ $("form").bind("keypress", function(e) {
 	}
 });
 
+//SEARCH FUNCTION
+//everytime a character is inputed
+//js sends search query into search.php
+//and pushes the results into HTML
 $("input").keyup(function(){
 	var input_value = this.value;
 	

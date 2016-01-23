@@ -2,7 +2,7 @@
 <?
 	if(isset($_GET['search_query'])){
 		
-		//Stores t
+		//Stores the GET
 		$search_query = $_GET['search_query'];
 		
 		//SETUP username, password, and establish PDO and DSN connection to database
@@ -21,6 +21,7 @@
 		$query = $stmt->fetchall(PDO::FETCH_ASSOC);
 		
 		//Checks if search field is empty
+		//won't return anything if search field is empty
 		if(!empty($search_query)){
 			//outputs matched items
 			foreach($query as $row){
