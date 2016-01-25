@@ -13,17 +13,10 @@
             <h3>Materials:</h3>
             <?
 			
-			//get materials for item from database
-        	$query = $this->db->query('
-			select quantity, items.itemsName as material from materials
-			join items
-			on material = items.id
-			where craftableid = (select id from items where itemsName = "'.$item_name.'")');
-			
 			//outputs material into html
             //<span>Number of material</span>
             //<img src="images/items/$material">
-			foreach($query->result() as $row){
+			foreach($mats as $row){
 				echo '<div class="mats" title="'.ucwords(str_replace("_", " ", $row->material)).'"><span class="outline"> '.$row->quantity.'</span>';
 				echo '<img src="assets/images/items/'.$row->material.'.png" ></div>';
 			}
