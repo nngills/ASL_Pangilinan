@@ -128,6 +128,16 @@ h3{
 	margin: 0px;
 }
 
+#msg{
+	font-size: 2.3em;
+	text-align: center;
+	height: 106px;
+}
+
+#msg p{
+	margin: 0px;
+}
+
 /**Title**/
 #title{
 	float: left;

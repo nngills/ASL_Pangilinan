@@ -1,7 +1,7 @@
 <ul>
 <?
 	if(isset($_GET['search_query'])){
-		
+			
 		//Stores the GET
 		$search_query = $_GET['search_query'];
 		
