@@ -9,7 +9,7 @@
 }
 
 body{
-	background-image: url(../images/purplebg.png);
+	background-image: url(../images/vanbg.png);
 	margin: 0;
 	padding: 0;
 	font-family: Stint;
@@ -23,13 +23,41 @@ h1, h2{
 /*-*-*-*-*-*-	HEADER	-*-*-*-*-*-*/
 header{
 	background-color: #000;
-	padding: 5px;
+	padding: 10px 5px 3px 5px;
 	margin-bottom: 30px;
+	color: #fff;
+	font-family: "Belisa Plumilla";
+	overflow:auto;
 }
 
 h1{
-	color: #fff;
 	margin: 0px;
+	float: left;
+}
+
+header ul{
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	font-size: 1.6em;
+	margin-top: 2px;
+}
+
+header li{
+	display: inline;
+}
+
+header li a{
+	border: 5px;
+	border-image: url(../images/versionbg.png) 10;
+	padding: 3px 5px 0px 5px;
+	color: #fff;
+	text-decoration: none;
+}
+
+header li:not(:last-child){
+	margin-right: 5px;
 }
 
 /*-*-*-*-*-*-	NAVIGATION	-*-*-*-*-*-*/

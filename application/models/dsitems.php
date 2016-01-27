@@ -6,6 +6,12 @@ class DSitems extends CI_Model {
 		$this->load->database(); 
 	}
 	
+	//get version name
+	public function get_version($v){
+		$query = $this->db->query('select versionName from version where id = "'.$v.'"');	
+		return $query->result();
+	}
+	
 	//returns tabs from the database
 	public function get_tabs(){
 		$query = $this->db->query('select tabName from tabs order by id');
@@ -13,30 +19,51 @@ class DSitems extends CI_Model {
 	}
 	
 	//returns craftable items from the database
-	public function get_craftitems(){
+	public function get_craftitems($version){
 		$query = $this->db->query('
 			select items.itemsName, tabs.tabName from craftable_items
 			join items on items.id = craftable_items.itemId
 			join tabs on tabs.id = craftable_items.tab
+			where version <= '.$version.';
 			order by tabs.id;
 		');
 		return $query->result();	
 	}
 	
-	//returns itemname from the GET URL
-	public function get_GETid(){
-		$item_name = $_GET['id'];
-		return $item_name;	
-	}
-	
 	//returns the materials for the enterred parameter
 	//parameter is the item name from the GET URL
-	public function get_mats($item_name){
+	public function get_mats($item_name, $version){
 		$query = $this->db->query('
 			select quantity, items.itemsName as material from materials
 			join items
 			on material = items.id
-			where craftableid = (select id from items where itemsName = "'.$item_name.'")'
+			where craftableid = (select id from items where itemsName = "'.$item_name.'")
+			and (materials.version = '.$version.' or materials.version = 0)'
+		);	
+		return $query->result();	
+	}
+	
+	//get items that use this material
+	public function get_ableitems($item_name){
+		$query = $this->db->query('
+			select itemsName 
+			from materials 
+			join items
+			on items.id = materials.craftableId
+			where material = (select id from items where itemsName = "'.$item_name.'") 
+			group by craftableId;
+		');
+	}
+	
+	//get itemNames that contain the string
+	//used for the search function
+	public function search_items($search_query, $version){
+		$query = $this->db->query('
+			select itemsName from craftable_items
+			join items
+			on items.id = craftable_items.itemId
+			where itemsName like "%'.$search_query.'%"
+			and items.version <= '.$version
 		);	
 		return $query->result();	
 	}

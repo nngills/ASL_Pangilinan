@@ -11,20 +11,31 @@ class Pages extends CI_Controller {
 			//loads the model to get data from the database
 		    $this->load->model('DSitems');
 			
+			//get version from GET
+			if(isset($_GET['version'])){
+				$data['version'] = $_GET['version'];
+			}else{
+				$data['version'] = 2;
+			}
+			
 			//gets tabs from the database
 			$data['tabs'] = $this->DSitems->get_tabs();
 			//gets tabs from the database
-			$data['craft_items'] = $this->DSitems->get_craftitems();
+			$data['craft_items'] = $this->DSitems->get_craftitems($data['version']);
 			
-			$this->load->view('templates/header');
+			//get current version name
+			$data['v'] = $this->DSitems->get_version($_GET['version']);
+			
+			$this->load->view('templates/head', $data);
+			$this->load->view('pages/header');
 			$this->load->view('pages/nav', $data);
 			
 			//if there is no GET set to default page
 			if(isset($_GET['id'])){
 				//gets item name from the GET
-				$data['item_name'] = $this->DSitems->get_GETid();
+				$data['item_name'] = $_GET['id'];
 				//gets item's recipe materials
-				$data['mats'] = $this->DSitems->get_mats($data['item_name']);
+				$data['mats'] = $this->DSitems->get_mats($data['item_name'], $data['version']);
 				$this->load->view('pages/recipe.php', $data);
 				
 			}else{
@@ -34,6 +45,18 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/searchbar.php');
 			$this->load->view('pages/itemlist', $data);
 			$this->load->view('templates/footer');
+	}
+	
+	//This function gets called in AJAX
+	//Handles the search functions
+	public function search(){
+		
+		$this->load->model('DSitems');
+		
+		$data['search_results'] = $this->DSitems->search_items($_GET['search_query'], $_GET['version']);
+		$data['version'] = $_GET['version'];
+		
+		$this->load->view('pages/search.php', $data);
 	}
 }
 ?>

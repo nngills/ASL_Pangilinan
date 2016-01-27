@@ -23,7 +23,7 @@
 			//outputs a GET into the URL
             if($items_row->tabName == $row->tabName){
                 $itemName = $items_row->itemsName;
-                echo '<li title="'.ucwords(str_replace("_", " ", $itemName)).'"><a href="index.php?id='.$itemName.'"><img src="assets/images/items/'.$itemName.'.png"></a></li>';
+                echo '<li title="'.ucwords(str_replace("_", " ", $itemName)).'"><a href="index.php?id='.$itemName.'&version='.$version.'"><img src="assets/images/items/'.$itemName.'.png"></a></li>';
             }
         }
                 

@@ -4,6 +4,7 @@
 			
 		//Stores the GET
 		$search_query = $_GET['search_query'];
+		echo $_GET['version'];
 		
 		//SETUP username, password, and establish PDO and DSN connection to database
     	$user='root';
@@ -25,7 +26,7 @@
 		if(!empty($search_query)){
 			//outputs matched items
 			foreach($query as $row){
-				echo '<li title="'.ucwords(str_replace("_", " ", $row['itemsName'])).'"><a href="index.php?id='.$row['itemsName'].'"><img src="assets/images/items/'.$row['itemsName'].'.png"></a></li>';	
+				echo '<li title="'.ucwords(str_replace("_", " ", $row['itemsName'])).'"><a href="index.php?id='.$row['itemsName'].'&version='.$version.'"><img src="assets/images/items/'.$row['itemsName'].'.png"></a></li>';	
 		}
 		
 			//

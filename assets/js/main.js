@@ -49,6 +49,17 @@ $("form").bind("keypress", function(e) {
 	}
 });
 
+//allows jquery to retrieve the GET
+var $_GET = {};
+
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+});
+
 //SEARCH FUNCTION
 //everytime a character is inputed
 //js sends search query into search.php
@@ -57,15 +68,15 @@ $("input").keyup(function(){
 	var input_value = this.value;
 	
 	$.ajax({
-		url: 'search.php',
-		data: {'search_query': this.value},
+		url: 'index.php/Pages/search',
+		data: {'search_query': this.value, 'version': $_GET['version']},
 		type: "GET",
 		success: function(data){
 			if(input_value.length > 0){
-				$("#search_results").html(data)
+				$("#search_results").show().html(data)
 				$("#itemlist").hide();
 			}else{
-				$("#search_results").html(data)
+				$("#search_results").hide().html(data)
 				$("#itemlist").show();
 			}
 		}
