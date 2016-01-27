@@ -52,10 +52,10 @@ $("form").bind("keypress", function(e) {
 //SHOW AND HIDE RECIPE LIST
 elem = $("#recipe_list p").click(function(){
 	if($('#recipe_list ul').is(":visible")){
-		$('#recipe_list ul').hide(400);
+		$('#recipe_list ul').hide(300);
 		$("#recipe_list p").text("View recipes that use this item");
 	}else{
-		$('#recipe_list ul').show(400);
+		$('#recipe_list ul').show(300);
 		$("#recipe_list p").text("Show less");
 	}
 });

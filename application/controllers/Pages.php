@@ -58,6 +58,7 @@ class Pages extends CI_Controller {
 		$this->load->model('DSitems');
 		
 		$data['search_results'] = $this->DSitems->search_items($_GET['search_query'], $_GET['version']);
+		$data['search_mats'] = $this->DSitems->search_mats($_GET['search_query'], $_GET['version']);
 		$data['version'] = $_GET['version'];
 		
 		$this->load->view('pages/search.php', $data);

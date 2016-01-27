@@ -252,6 +252,15 @@ input{
 	margin-top: 20px;
 }
 
+#search_results p{
+	margin: 0px 0px 10px 0px;
+	font-size: 1.2em;
+}
+
+#search_results ul{
+	margin-bottom: 10px;
+}
+
 input:focus { 
 	outline: none; 
 }

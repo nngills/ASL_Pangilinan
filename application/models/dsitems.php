@@ -90,5 +90,20 @@ class DSitems extends CI_Model {
 		);	
 		return $query->result();	
 	}
+	
+	//get materials that contain the string
+	//used for search function
+	public function search_mats($search_query, $version){
+		$query = $this->db->query('
+			select itemsName from materials
+			join items
+			on items.id = materials.material
+			where itemsName like "%'.$search_query.'%"
+			and items.version <= '.$version.'
+			group by itemsName'
+		);	
+		return $query->result();	
+	}
+	
 }
 ?>
