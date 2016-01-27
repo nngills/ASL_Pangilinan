@@ -188,17 +188,16 @@ h3{
 .mats{
 	float: left;
 	position: relative;
-	cursor: pointer;
 }
 
-#materials span{
+#materials span, #recipe_list span{
 	font-size: 1.4em;
 	position: absolute;
 	width: 52px;
 	text-align: center;
 }
 
-#materials a{
+#materials a, #recipe_list a{
 	color: #fff;
 }
 
@@ -206,6 +205,27 @@ h3{
 #recipe_list{
 	margin-top: 15px;
 	clear: both;
+}
+
+#recipe_list p{
+	margin: 0px;
+	font-size: 1.4em;
+}
+
+#recipe_list > ul{
+	overflow: auto;
+	position: relative;
+}
+
+#recipe_list > ul > li img{
+	width: 54px;
+}
+
+#recipe_list ul ul{
+	overflow: auto;
+	position: absolute;
+	bottom: 0px;
+	left: 64px;
 }
 
 /**SEARCH BAR**/
