@@ -38,7 +38,9 @@ class Pages extends CI_Controller {
 				$data['mats'] = $this->DSitems->get_mats($data['item_name'], $data['version']);
 				$this->load->view('pages/recipe.php', $data);
 				$data['ablerecipes'] = $this->DSitems->get_ablerecipes($data['item_name'], $data['version']);
-				$this->load->view('pages/recipelist.php', $data);
+				if(!empty($data['ablerecipes'])){
+					$this->load->view('pages/recipelist.php', $data);
+				}
 				
 			}else{
 				$this->load->view('pages/'.$page);

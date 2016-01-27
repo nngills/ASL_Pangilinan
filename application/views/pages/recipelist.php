@@ -1,5 +1,5 @@
 <section id="recipe_list">
-<p>Recipes that use this item: </p>
+<p>View recipes that use this item.</p>
 	<?  
 	foreach($ablerecipes as $row){
 		echo "<ul>";

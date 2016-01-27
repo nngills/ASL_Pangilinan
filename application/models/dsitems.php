@@ -75,7 +75,6 @@ class DSitems extends CI_Model {
 			};
 			array_push($results, $itemarr);
 		}
-		
 		return $results;
 	}
 	

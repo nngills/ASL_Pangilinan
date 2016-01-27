@@ -147,6 +147,8 @@ main img{
 /**---RECIPE---**/
 #recipe{
 	position: relative;
+	margin-bottom: 20px;
+	overflow: auto;
 }
 
 #recipe h2{
@@ -190,7 +192,7 @@ h3{
 	position: relative;
 }
 
-#materials span, #recipe_list span{
+#materials span, #recipe_list ul span{
 	font-size: 1.4em;
 	position: absolute;
 	width: 52px;
@@ -210,11 +212,14 @@ h3{
 #recipe_list p{
 	margin: 0px;
 	font-size: 1.4em;
+	cursor: pointer;
+	font-family: "Belisa Plumilla";
 }
 
 #recipe_list > ul{
 	overflow: auto;
 	position: relative;
+	display: none;
 }
 
 #recipe_list > ul > li img{
