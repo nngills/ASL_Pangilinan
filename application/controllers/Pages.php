@@ -27,7 +27,7 @@ class Pages extends CI_Controller {
 			$data['v'] = $this->DSitems->get_version($_GET['version']);
 			
 			$this->load->view('templates/head', $data);
-			$this->load->view('pages/header');
+			$this->load->view('pages/header', $data);
 			$this->load->view('pages/nav', $data);
 			
 			//if there is no GET set to default page

@@ -9,10 +9,17 @@
 }
 
 body{
-	background-image: url(../images/vanbg.png);
 	margin: 0;
 	padding: 0;
 	font-family: Stint;
+}
+
+#vanilla{
+	background-image: url(../images/vanbg.png);
+}
+
+#RoG{
+	background-image: url(../images/rogbg.png);
 }
 
 h1, h2{

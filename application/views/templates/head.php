@@ -6,4 +6,4 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 
-<body id="<? $v ?>">
+<body id="<? echo $v[0]->versionName ?>">

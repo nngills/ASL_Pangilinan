@@ -8,7 +8,7 @@ class DSitems extends CI_Model {
 	
 	//get version name
 	public function get_version($v){
-		$query = $this->db->query('select versionName from version where id = "'.$v.'"');	
+		$query = $this->db->query('select versionName from version where id ='.$v);	
 		return $query->result();
 	}
 	
