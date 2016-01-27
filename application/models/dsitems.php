@@ -44,15 +44,39 @@ class DSitems extends CI_Model {
 	}
 	
 	//get items that use this material
-	public function get_ableitems($item_name){
+	public function get_ablerecipes($item_name, $version){
 		$query = $this->db->query('
 			select itemsName 
 			from materials 
 			join items
 			on items.id = materials.craftableId
-			where material = (select id from items where itemsName = "'.$item_name.'") 
+			where material = (select id from items where itemsName = "'.$item_name.'")
+			and items.version <= '.$version.'
 			group by craftableId;
 		');
+		
+		$results = array();
+		
+		foreach($query->result() as $row){
+			
+			$itemarr = array("itemsName"=>$row->itemsName);
+			
+			$matsquery = $this->db->query('
+				select quantity, items.itemsName as material from materials
+				join items
+				on material = items.id
+				where craftableid = (select id from items where itemsName = "'.$row->itemsName.'")
+				and (materials.version = '.$version.' or materials.version = 0)'
+			);
+			$mats = $matsquery->result();
+			foreach($mats as $matsrow){
+				$matsarr = array("material"=>$matsrow->material, "quantity"=>$matsrow->quantity);
+				array_push($itemarr ,$matsarr);
+			};
+			array_push($results, $itemarr);
+		}
+		
+		return $results;
 	}
 	
 	//get itemNames that contain the string

@@ -198,6 +198,16 @@ h3{
 	text-align: center;
 }
 
+#materials a{
+	color: #fff;
+}
+
+/*Recipes list*/
+#recipe_list{
+	margin-top: 15px;
+	clear: both;
+}
+
 /**SEARCH BAR**/
 input{
 	margin-top: 20px;

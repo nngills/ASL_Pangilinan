@@ -17,8 +17,8 @@
             //<span>Number of material</span>
             //<img src="images/items/$material">
 			foreach($mats as $row){
-				echo '<div class="mats" title="'.ucwords(str_replace("_", " ", $row->material)).'"><span class="outline"> '.$row->quantity.'</span>';
-				echo '<img src="assets/images/items/'.$row->material.'.png" ></div>';
+				echo '<a href="index.php?id='.$row->material.'&version='.$version.'" class="mats" title="'.ucwords(str_replace("_", " ", $row->material)).'"><span class="outline"> '.$row->quantity.'</span>';
+				echo '<img src="assets/images/items/'.$row->material.'.png" ></a>';
 			}
             ?>
         </section>
