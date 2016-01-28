@@ -15,7 +15,7 @@ class Pages extends CI_Controller {
 			if(isset($_GET['version'])){
 				$data['version'] = $_GET['version'];
 			}else{
-				$data['version'] = 2;
+				$data['version'] = 1;
 			}
 			
 			//gets tabs from the database
@@ -24,7 +24,7 @@ class Pages extends CI_Controller {
 			$data['craft_items'] = $this->DSitems->get_craftitems($data['version']);
 			
 			//get current version name
-			$data['v'] = $this->DSitems->get_version($_GET['version']);
+			$data['v'] = $this->DSitems->get_version($data['version']);
 			
 			$this->load->view('templates/head', $data);
 			$this->load->view('pages/header', $data);

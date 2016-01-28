@@ -78,9 +78,15 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
 $("input").keyup(function(){
 	var input_value = this.value;
 	
+	if($_GET['version'] === undefined){
+		version = 1;
+	}else{
+		version = $_GET['version'];
+	}
+	
 	$.ajax({
 		url: 'index.php/Pages/search',
-		data: {'search_query': this.value, 'version': $_GET['version']},
+		data: {'search_query': this.value, 'version': version},
 		type: "GET",
 		success: function(data){
 			if(input_value.length > 0){
